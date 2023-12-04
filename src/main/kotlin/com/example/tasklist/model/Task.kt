@@ -1,8 +1,8 @@
 import java.time.LocalDate
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
 
 // Аннотация @Entity указывает, что класс является сущностью, которую можно сохранить в базе данных
 @Entity
