@@ -11,8 +11,8 @@ data class Task(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null, // Идентификатор задачи (автоматически генерируется)
 
-    val title: String, // Заголовок задачи
-    val description: String?, // Описание задачи (может быть null)
-    val dueDate: LocalDate, // Дата выполнения задачи
-    val completed: Boolean = false // Флаг выполнения задачи (по умолчанию false)
+    var title: String, // Заголовок задачи
+    var description: String?, // Описание задачи (может быть null)
+    var dueDate: LocalDate, // Дата выполнения задачи
+    var completed: Boolean = false // Флаг выполнения задачи (по умолчанию false)
 )

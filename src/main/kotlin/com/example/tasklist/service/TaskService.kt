@@ -1,8 +1,7 @@
-// Импорты необходимых библиотек
 import org.springframework.stereotype.Service
 import java.time.LocalDate
 
-// Аннотация @Service указывает Spring, что это сервисный компонент
+// Аннотация @Service говорит Spring, что это компонент сервиса
 @Service
 class TaskService(private val taskRepository: TaskRepository) {
 
@@ -13,7 +12,7 @@ class TaskService(private val taskRepository: TaskRepository) {
 
         return when {
             today == true -> taskRepository.findByDueDateBetweenAndCompleted(currentDate, currentDate, completed ?: false)
-            week == true -> taskRepository.findByDueDateBetweenAndCompleted(currentDate, currentDate.plusWeeks(1), completed ?: false)
+            week == true -> taskRepository.findByDueDateBetweenAndCompleted(currentDate, currentDate.plusDays(6), completed ?: false)
             month == true -> taskRepository.findByDueDateBetweenAndCompleted(currentDate, currentDate.plusMonths(1), completed ?: false)
             else -> taskRepository.findByCompleted(completed ?: false)
         }
